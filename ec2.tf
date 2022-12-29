@@ -9,7 +9,7 @@ resource "aws_instance" "arday_ec2" {
     volume_size = 16
   }
   tags = {
-    Name = "Instance-server"
+    Name = "machine-server"
   }
 
 }
