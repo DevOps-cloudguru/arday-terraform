@@ -8,7 +8,7 @@ resource "aws_instance" "arday_ec2" {
    root_block_device {
     volume_size = 16
   }
-  tags = {
+  tags {
     Name = "machine-server"
   }
 
