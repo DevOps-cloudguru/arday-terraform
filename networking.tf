@@ -56,7 +56,7 @@ resource "aws_route_table" "arday-rt-public" {
 resource "aws_route" "default_route" {
   route_table_id         = aws_route_table.arday-rt-public.id
   destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.arday-ig.id
+  gateway_id             = aws_internet_gateway.arday-igw.id
 }
 
 ## Public subnet association
@@ -69,11 +69,12 @@ resource "aws_route_table_association" "arday-rt-public-ass" {
 resource "aws_security_group" "arday_sg" {
   name        = "arday-sg"
   description = "Arday-DevOps Security group"
+  vpc_id      = aws_vpc.main.id
 
   ingress {
     from_port = 0
     to_port   = 0
-    protocol  = "-"
+    protocol  = "-1"
     # cidr_blocks = ["1.1.1.1/32"] # /32 to ensure only that IP is allowed
     cidr_blocks = ["0.0.0.0/0"]
   }
