@@ -44,6 +44,7 @@ resource "aws_instance" "arday_ec2" {
 
 }
 
+#the outputs will go to their dedicated files
 output "instance_public_dns" {
   value = aws_instance.arday_ec2.public_dns
 }
