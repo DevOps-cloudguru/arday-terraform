@@ -1,11 +1,25 @@
+
+##### for local providers use
+#############################
+# to provide configuration that terraform need to know
 terraform {
-  backend "s3" {
-    bucket   = "terraform-cloudguru-hh-test"
-    key      = "terraform-cloudgurur.tfstate"
-    dynamodb_table = "terarform.lock"
-    region   = "us-east-2"
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
   }
 }
 
+# Provider block, provides the information need to access AWS specificly
+provider "aws" {
+  region = "us-east-2"
+  # region                   = "us-west-2"
+  shared_credentials_files = [("~/.aws/credentials")]
+  # shared_credentials_file = "/Users/M ROBLE/.aws/credentials"
+  profile = "default"
+  # profile = "arday1"
+}
+
+# a provider is to interact with the API of your infrastructure
 
 
