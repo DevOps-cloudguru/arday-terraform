@@ -14,6 +14,8 @@ resource "aws_instance" "arday_ec2" {
 
 }
 
+## this should be an old
+
 output "instance_public_dns" {
   value = aws_instance.arday_ec2.public_dns
 }
