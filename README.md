@@ -7,6 +7,7 @@ This Repository will be covered in these areas of Terraform
 3. Security Groups
 3. Data Source
 4. Local Values
+4. Count
 6. Creating SSH
 7. EC2
 8. User-Data
